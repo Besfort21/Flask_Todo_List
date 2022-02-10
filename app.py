@@ -15,9 +15,25 @@ class Todotb(db.Model):
     complete = db.Column(db.Boolean)
 
 
-@app.route("/")
+@app.route('/' ,methods=['POST','GET'])
 def index():
-  return render_template('index.html')
+    
+    incompleteit = Todotb.query.filter_by(complete=False).all()
+    completeit = Todotb.query.filter_by(complete=True).all()
+    if request.method == 'POST':
+        q = request.form['q']
+        searchtodo = Todotb.query.filter_by(text=q)
+        return render_template('index.html', incompleteit=incompleteit, completeit=completeit,searchtodo=searchtodo)
+    return render_template('index.html', incompleteit=incompleteit, completeit=completeit)
+
+@app.route('/add', methods=['POST'])
+def add():
+    
+    todo = Todotb(text=request.form['todotext'], complete=False)
+    db.session.add(todo)
+    db.session.commit()
+
+    return redirect(url_for('index'))
 
 
 

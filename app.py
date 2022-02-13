@@ -35,7 +35,23 @@ def add():
 
     return redirect(url_for('index'))
 
+@app.route('/complete/<id>')
+def complete(id):
 
+    complete_todo = Todotb.query.filter_by(id=int(id)).first()
+    complete_todo.complete = True
+    db.session.commit()
+    
+    return redirect(url_for('index'))
+
+@app.route('/delete/<id>')
+def delete(id):
+
+    delete_todo = Todotb.query.filter_by(id=int(id)).first()
+    db.session.delete(delete_todo)
+    db.session.commit()
+    
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     db.create_all()

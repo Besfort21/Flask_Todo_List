@@ -20,7 +20,33 @@
             <input type="submit" value="Search">
         </form>
         <ul>
-
+            <h2>Search Result</h2>
+            {% for todoitem in searchtodo %}
+            <li>
+                <strong class="item">{{ todoitem.text }}</strong>
+                <a href="{{ url_for('complete', id=todoitem.id) }}" class="button" >complete</a>
+                <a href="{{ url_for('delete', id=todoitem.id) }}" class="button" >delete</a>
+            </li>
+            {% endfor %}
+            <h2>Incomplete Items</h2>
+            {% for todoitem in incompleteit %}
+            <li>
+                <strong>{{ todoitem.text }}</strong> 
+                <a href="{{ url_for('complete', id=todoitem.id) }}" class="button" >complete</a>
+                <a href="{{ url_for('delete', id=todoitem.id) }}" class="button" >delete</a>
+                <a class='up button' href='#' >up</a>
+                <a class='down button' href='#'>down</a></li>
+            </li>
+            {% endfor %}
+            <h2>Completed Items</h2>
+            {% for todoitem in completeit %}
+            <li>
+                <strong>{{ todoitem.text }}</strong> 
+                <a href="{{ url_for('delete', id=todoitem.id) }}" class="button">delete</a>
+                <a class='up button' href='#' >up</a>
+                <a class='down button' href='#'>down</a></li>
+            </li>
+            {% endfor %}
         </ul>
     </div>
 </body>

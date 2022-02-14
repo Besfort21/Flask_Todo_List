@@ -1,0 +1,51 @@
+.button {
+    font: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    text-decoration: none;
+    background: #0ead7e;
+    color: black;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    float: right;
+}
+
+.header {
+    background-color: #0ead7e;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: rgb(194, 187, 187);
+  font-size: 18px;
+  transition: 0.2s;
+  font: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+
+ul li:hover {
+  background: #ddd;
+}
+
+h1,h2 {
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+body{
+  background-color: snow;
+}

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy 
+from sqlalchemy import func
 
 app = Flask(__name__)
 
@@ -22,7 +23,9 @@ def index():
     completeit = Todotb.query.filter_by(complete=True).all()
     if request.method == 'POST':
         q = request.form['q']
-        searchtodo = Todotb.query.filter_by(text=q)
+        q_lower = q.lower()
+        Todotb.text = func.lower(Todotb.text)
+        searchtodo = Todotb.query.filter_by( text = q_lower)
         return render_template('index.html', incompleteit=incompleteit, completeit=completeit,searchtodo=searchtodo)
     return render_template('index.html', incompleteit=incompleteit, completeit=completeit)
 

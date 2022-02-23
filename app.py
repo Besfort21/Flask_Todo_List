@@ -30,6 +30,8 @@ def index():
     if request.method == 'POST':
         q = request.form['q']
         q_lower = q.lower()
+        if not q_lower:
+            return render_template('index.html', incompleteit=incompleteit, completeit=completeit)
         Todotb.text = func.lower(Todotb.text)
         searchtodo = Todotb.query.filter( Todotb.text.contains(q_lower)).all()
         return render_template('index.html', incompleteit=incompleteit, completeit=completeit,searchtodo=searchtodo)

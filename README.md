@@ -6,10 +6,16 @@ To-do list Web application.
 
 ### Built With
 * Flask
+* Jinja2
 * Flask-SQLAlchemy
+* SQLAlchemy
+* SQLite
 * HTML
 * CSS
 * JavaScript
+
+### Project Layout
+* [Layout](https://github.com/Besfort21/Flask_Todo_List/files/8239589/Architecture.Diagram.Project.drawio.pdf)
 
 ## Getting Started
 1. Download the ZIP.

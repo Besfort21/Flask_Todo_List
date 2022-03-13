@@ -11,6 +11,9 @@ To-do list Web application.
 * CSS
 * JavaScript
 
+### Project Layout
+* [Layout](https://github.com/Besfort21/Flask_Todo_List/files/8239589/Architecture.Diagram.Project.drawio.pdf)
+
 ## Getting Started
 1. Download the ZIP.
 2. cd to the directory where requirements.txt is located

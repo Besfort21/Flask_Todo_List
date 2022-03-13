@@ -6,7 +6,10 @@ To-do list Web application.
 
 ### Built With
 * Flask
+* Jinja2
 * Flask-SQLAlchemy
+* SQLAlchemy
+* SQLite
 * HTML
 * CSS
 * JavaScript
